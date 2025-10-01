@@ -1,91 +1,69 @@
-Based on your Power BI **Banking Report** document, here's a polished and professional **README.md** you can use for GitHub, Notion, or a PDF portfolio:
+📌 Problem Statement
 
----
+Banks process thousands of loan applications every month, but critical insights such as portfolio health, repayment efficiency, borrower risk, and lending trends are often fragmented across multiple systems.
 
-# 🏦 Banking Risk Analytics Dashboard (Power BI Project)
+This lack of integration creates three major challenges:
 
-## 📌 Project Overview
-This project aims to provide insights into customer behavior, loan distribution, and deposit trends using interactive Power BI dashboards. The primary goal is to help banking institutions **minimize risk in lending** decisions and better understand customer engagement.
+Portfolio Monitoring: Management cannot easily track how many loans are performing (Good Loans) vs. defaulting (Bad Loans).
 
----
+Repayment Efficiency: There is limited visibility into how much of the funded loan amount has been received back, leading to cash flow blind spots.
 
-## 🎯 Problem Statement
-Develop a basic understanding of **risk analytics in banking**, using data to support decisions around loan approvals. The dashboard helps answer key questions like:
+Risk Segmentation: Borrower-level attributes like employment length, debt-to-income ratio (DTI), loan purpose, and home ownership are not consistently analyzed to identify high-risk groups.
 
-- Is the customer likely to repay the loan?
-- Which clients are most engaged?
-- What segments contribute the most in terms of deposits or loans?
+The absence of a unified BI solution makes it difficult for banks to:
 
----
+Detect default risks early.
 
-## 🗃️ About the Dataset
-The dataset is a simulated banking database containing interlinked tables with client and bank information:
+Adjust credit policies based on borrower profiles.
 
-- `Banking Relationship`  
-- `Client-Banking`  
-- `Investment Advisor`  
-- `Gender`  
-- `Period`
+Understand regional or demographic patterns in lending.
 
-Each table is connected using **primary and foreign keys**. The key metrics focus on customer deposits, loan distribution, and engagement.
+Present clear insights to executives for decision-making.
 
----
+✅ Answer Using the Dashboard
 
-## 🧹 Data Cleaning & Transformation
-Performed using Power Query:
+To solve this, I designed an end-to-end Business Intelligence solution integrating SQL Server, Power BI, Tableau, and Excel to analyze 38.6K loan applications worth $435M+. The workflow included data cleaning and validation (SQL), KPI extraction, cross-verification (Excel & Tableau), and dashboard storytelling (Power BI).
 
-- Created new columns such as:
-  - **Engagement Days** (DATEDIFF between Join Date and Today)
-  - **Income Band** (Binning Estimated Income)
-  - **Processing Fees** based on Fee Structure
-- Established relationships between tables using keys
-- Applied calculated columns and measures for KPIs
+🔹 Dashboards Designed
 
----
+1. Summary Dashboard
 
-## 🔣 DAX Functions Used
-- `SUM`, `SUMX` – for aggregations  
-- `DISTINCTCOUNT` – for client count  
-- `DATEDIFF` – for engagement calculation  
-- `SWITCH` – for fee band logic
+Showed portfolio KPIs: Total Applications, Funded Amount, Amount Received, Avg Interest Rate, Avg DTI.
 
----
+Tracked Good vs Bad Loans → revealed 86% performing loans vs 14% defaults.
 
-## 📊 Key KPIs
-- **Total Clients**  
-- **Total Loan** = Bank Loan + Business Lending + Credit Card Balance  
-- **Total Deposits** = Bank + Savings + Foreign Currency + Checking  
-- **Engagement Length (Days)**  
-- **Total Fees** (calculated using SUMX)
+Included a Loan Status Grid and YoY Growth trends for portfolio health.
 
----
+2. Overview Dashboard
 
-## 📈 Dashboard Visualizations
-- **Loan Analysis Dashboard**  
-- **Deposit Overview Dashboard**  
-- **Engagement & Fees Summary Dashboard**  
-- **Total Bank Exposure & Income Band Metrics**
+Monthly lending trends (seasonality).
 
----
+Regional analysis by U.S. state → flagged high delinquency states.
 
-## ✅ Results & Insights
-- Identified high-loan clients segmented by gender, advisor, and nationality  
-- Highlighted clients with the highest deposit volumes  
-- Showed that **private banks have more active clients**, influencing strategic decisions  
-- Mapped engagement patterns based on duration of relationship with the bank
+Borrower profiles segmented by loan purpose, home ownership, and employment length.
 
----
+3. Details Dashboard
 
-## 🔮 Future Scope
-- Integrate predictive models to classify high-risk borrowers  
-- Include a real-time alerting system for high engagement drop-offs  
-- Expand the dashboard to include cross-selling metrics and advisor performance
+A searchable grid with borrower-level loan data.
 
----
+Designed for analysts and loan officers to drill down into specific cases.
 
-## 📎 Files Included
-- `Banking_Report.pbix` (Power BI file)  
-- `Dataset/` folder with all cleaned Excel sheets  
-- `Documentation.pdf` (project summary + screenshots)
+🔹 Key Insights & Outcomes
 
----
+Portfolio Quality: Out of $435M loans, 86% were Good Loans, 14% Bad Loans → highlighting credit risk exposure.
+
+Repayment Gaps: Amount received lagged behind funded loans, flagging potential cash flow issues.
+
+High-Risk Segments: Borrowers with high DTI ratios and short employment history showed higher default tendencies.
+
+Regional Patterns: Certain states had a concentration of defaults → enabling geography-specific policy changes.
+
+Loan Purpose Impact: Debt consolidation & credit card repayment loans contributed most to bad loans.
+
+🔹 Business Impact
+
+Enabled leadership to tighten lending criteria for high-risk borrower groups.
+
+Helped optimize monitoring efforts by focusing on risky states and borrower segments.
+
+Delivered clear, presentation-ready insights for executives via Power BI dashboards and an executive PPT.
